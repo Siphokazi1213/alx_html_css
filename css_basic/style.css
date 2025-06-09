@@ -1,0 +1,60 @@
+/* Apply display: flex to both <body> and <main> to make them flex containers */
+body {
+  display: flex; /* Makes <body> a flex container */
+  flex-direction: column; /* Arranges children (<header>, <main>, <footer>) in a column */
+  min-height: 100vh; /* Ensures body takes full viewport height for proper column layout */
+}
+
+main {
+  display: flex; /* Makes <main> a flex container */
+  flex-direction: row; /* Arranges children (<article>, <aside>) in a row */
+  flex: auto; /* Ensures <main> takes up available space for automatic height and width */
+  flex-grow: 1; /* Allows main to grow and take up remaining vertical space */
+}
+
+article {
+  flex: 2; /* Makes <article> take up 2 units of space (2/3 of available space) */
+  overflow-y: auto; /* Allows vertical scrolling within <article> if content overflows */
+}
+
+aside {
+  flex: 1; /* Makes <aside> take up 1 unit of space (1/3 of available space) */
+  overflow-y: auto; /* Allows vertical scrolling within <aside> if content overflows */
+}
+
+/* Optional: Add some basic styling to visualize the layout during development */
+/* You can remove or modify these later */
+header,
+footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+main {
+  border: 1px solid blue; /* To visualize the main container */
+}
+
+article {
+  background-color: #e0e0e0;
+  padding: 20px;
+  border: 1px solid green; /* To visualize the article container */
+}
+
+aside {
+  background-color: #d0d0d0;
+  padding: 20px;
+  border: 1px solid red; /* To visualize the aside container */
+}
+
+/* A reminder from previous steps to keep the footer paragraph on one line */
+footer p {
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden; /* Hides overflowing text */
+  text-overflow: ellipsis; /* Adds "..." for overflowed text */
+}
+
+/* Ensure the HTML structure for the footer paragraph in index.html and tweets.html is: */
+/* <p>Made by YOUR NAME - <a href="ANY LINK" target="_blank">here</a></p> */
+/* Remember the single line in the HTML file itself. */
