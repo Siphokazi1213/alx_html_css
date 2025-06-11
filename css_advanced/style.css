@@ -1,0 +1,139 @@
+/* General Body & Typography */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* A common sans-serif font */
+  color: #333; /* Default text color */
+}
+
+/* Header Styling */
+header {
+  background-color: #6a0dad; /* Example background for header (purple-ish, adjust as needed) */
+  color: white; /* Text color for header content */
+  padding: 20px 0; /* Padding top/bottom, no horizontal padding here */
+  text-align: center; /* Center content horizontally */
+}
+
+header nav {
+  display: flex; /* Make nav a flex container */
+  justify-content: space-between; /* Push logo to left, nav links to right */
+  align-items: center; /* Vertically align items in the center */
+  padding: 0 5%; /* Add horizontal padding to the nav container */
+  max-width: 1200px; /* Limit width of content */
+  margin: 0 auto; /* Center the nav content */
+}
+
+header nav img {
+  height: 20px; /* Adjust logo height as needed */
+  width: auto;
+}
+
+header nav ul {
+  list-style: none; /* Remove bullet points from list */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Make the ul a flex container for its list items */
+  gap: 20px; /* Space out the navigation links */
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Section 1: Get Schooled (Hero Section) */
+main section:nth-child(1) {
+  background-color: #6a0dad; /* Matching header color for consistency, adjust if background image */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 400px; /* Minimum height for the hero section */
+  background-image: ("C:\Users\sipho\Desktop\Images\Object.png");
+}
+
+main section:nth-child(1) h1 {
+  font-size: 3em; /* Large font size for main title */
+  margin-bottom: 10px;
+}
+
+main section:nth-child(1) span {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 10px; /* Space between the spans */
+}
+
+main section:nth-child(1) button {
+  background-color: #c271ff; /* Purple button color */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+main section:nth-child(1) button:hover {
+  background-color: #aa50e0; /* Darken button on hover */
+}
+
+/* Section 2: Learn from the pros */
+main section:nth-child(1) > div:nth-of-type(2) {
+  /* This targets the div containing "Learn from the pros" h2 and the four profile divs */
+  background-color: white; /* Ensure this section's background is white to contrast with hero */
+  color: #333;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+main section:nth-child(1) > div:nth-of-type(2) h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+main section:nth-child(1) > div:nth-of-type(2) > div {
+  /* This targets the div containing the four profile divs */
+  display: flex; /* Make it a flex container */
+  flex-wrap: wrap; /* Allow items to wrap to next line on smaller screens */
+  justify-content: center; /* Center items horizontally */
+  gap: 30px; /* Space between profile cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main section:nth-child(1) > div:nth-of-type(2) > div > div {
+  /* Styling for individual profile cards */
+  flex: 1 1 200px; /* Allow cards to grow, shrink, and have a base width of 200px */
+  max-width: 250px; /* Maximum width for each card */
+  text-align: center;
+  padding: 15px;
+}
+
+main section:nth-child(1) > div:nth-of-type(2) img {
+  width: 150px; /* Size for profile images */
+  height: 150px;
+  border-radius: 50%; /* Make images circular */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: 10px;
+}
+
+main section:nth-child(1) > div:nth-of-type(2) h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #6a0dad; /* Name color */
+}
+
+main section:nth-child(1) > div:nth-of-type(2) p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Add more sections/styles here as you continue developing your page */
