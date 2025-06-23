@@ -8,6 +8,7 @@ body {
 /* Header Styling */
 header {
   background-color: #6a0dad; /* Example background for header (purple-ish, adjust as needed) */
+
   color: white; /* Text color for header content */
   padding: 20px 0; /* Padding top/bottom, no horizontal padding here */
   text-align: center; /* Center content horizontally */
@@ -53,7 +54,7 @@ main section:nth-child(1) {
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   min-height: 400px; /* Minimum height for the hero section */
-  background-image: ("C:\Users\sipho\Desktop\Images\Object.png");
+  background-image: ("../C:/Users/sipho/Desktop/Images/Object.png");
 }
 
 main section:nth-child(1) h1 {

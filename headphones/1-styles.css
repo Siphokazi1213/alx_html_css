@@ -1,0 +1,480 @@
+/* Variables */
+:root {
+  --primary-color: #ff0000; /* Red for call to action */
+  --hover-active-color: #ff6565; /* Specific hover/active color for links */
+  --text-color-light: #ffffff;
+  --text-color-dark: #333333;
+  --bg-dark: #071629;
+  --bg-light: #ffffff;
+  --font-family: "Inter", sans-serif;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color-dark);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+}
+
+/* General Container for max content width and centering */
+.container {
+  width: 90%;
+  max-width: 1000px; /* Max width as requested */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Titles and Descriptions */
+.section-title {
+  font-size: 2.5em; /* Approximately 40px */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-color-dark);
+}
+
+.section-description {
+  font-size: 1.1em;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background-image: url("01_headphones_desktop@2x.jpg"); /* Desktop background */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 150px 0 100px; /* Adjust padding for visual balance */
+  position: relative; /* Needed for overlay */
+  z-index: 1; /* Ensure content is above overlay */
+}
+
+/* Overlay for hero section background image for better text readability */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1; /* Place behind content */
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px min(5%, calc((100% - 1000px) / 2)); /* Dynamically adjust padding for max-width */
+  z-index: 10; /* Ensure navbar is above other elements */
+}
+
+.navbar .logo img {
+  max-height: 40px; /* Adjust logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--hover-active-color);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none; /* Hidden by default for desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color-light);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Hero Content */
+.hero-content {
+  padding-top: 50px; /* Space from navbar */
+  max-width: 800px; /* Keeping this as it looks good for the hero text */
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3em; /* Approximately 48px */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.1em; /* Approximately 18px */
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.call-to-action {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.call-to-action:hover,
+.call-to-action:active {
+  opacity: 0.9;
+}
+
+/* What we do section */
+.what-we-do-section {
+  background-color: var(--bg-light);
+  color: var(--text-color-dark);
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 30px; /* Adjust gap between items */
+  margin-top: 80px;
+}
+
+.feature-item {
+  flex: 0 0 220px; /* Fixed width for items */
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-icon {
+  font-size: 6em; /* Large icons */
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: #777;
+}
+
+/* Our results section (Placeholder) */
+.our-results-section {
+  background-image: url("01_headphones_desktop@2x.jpg"); /* Use desktop image as placeholder */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 150px 0 100px; /* Adjust padding for visual balance */
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay for results section background image */
+.our-results-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for this section */
+  z-index: -1;
+}
+
+.our-results-section .section-title,
+.our-results-section .section-description {
+  color: var(--text-color-light); /* Ensure text is white on dark background */
+}
+
+.pentagons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px 40px; /* Space between pentagons */
+  margin-top: 80px;
+}
+
+.pentagon-item {
+  text-align: center;
+}
+
+.pentagon-shape {
+  width: 150px; /* Size of the pentagon */
+  height: 150px;
+  background-color: var(--primary-color);
+  clip-path: polygon(
+    50% 0%,
+    100% 38%,
+    82% 100%,
+    18% 100%,
+    0% 38%
+  ); /* CSS for a pentagon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.pentagon-shape .percentage {
+  font-size: 2.5em; /* Large percentage text */
+  font-weight: 700;
+  color: var(--text-color-light);
+  line-height: 1; /* Adjust line height to center vertically */
+}
+
+.pentagon-item p {
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--text-color-light);
+}
+
+/* Contact us section (Placeholder) */
+.contact-us-section {
+  background-color: var(--bg-light);
+  color: var(--text-color-dark);
+}
+
+.contact-form {
+  max-width: 500px; /* Max width for the form */
+  margin: 50px auto 0;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-bottom: 1px solid #ccc; /* Only bottom border */
+  background-color: transparent; /* No background */
+  font-size: 1em;
+  color: var(--text-color-dark);
+  outline: none; /* Remove outline on focus */
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--primary-color); /* Highlight border on focus */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Footer Section */
+.footer-section {
+  background-color: var(--bg-dark);
+  color: var(--text-color-light);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.footer-content .logo img {
+  opacity: 0.75;
+  max-height: 40px;
+  margin-bottom: 20px; /* Space between logo and social icons on mobile */
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+}
+
+.social-icon {
+  color: var(--text-color-light);
+  font-size: 1.5em; /* Size of social icons */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+  /* Tablet and Desktop specific */
+  .footer-content {
+    flex-direction: row; /* Row layout for desktop/tablet */
+  }
+  .footer-content .logo img {
+    margin-bottom: 0; /* Remove bottom margin when in a row */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none; /* Hide by default on smaller screens */
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-dark);
+    position: absolute;
+    top: 80px; /* Below the logo */
+    left: 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar .nav-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .hero-section {
+    background-image: url("01_headphones_tablet@2x.jpg"); /* Tablet background */
+    padding: 120px 0 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .section-title {
+    font-size: 2em; /* Smaller titles for tablet */
+  }
+
+  .features-grid {
+    gap: 30px; /* Smaller gap for tablet */
+  }
+
+  .pentagons-grid {
+    gap: 40px 20px; /* Adjust gap for tablet */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
+  .pentagon-item {
+    flex-basis: 45%; /* Allow two items per row */
+  }
+
+  .contact-form {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    background-image: url("01_headphones_mobile@2x.jpg"); /* Mobile background */
+    padding: 100px 0 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  .section-title {
+    font-size: 1.8em; /* Even smaller titles for mobile */
+  }
+
+  .features-grid {
+    flex-direction: column; /* Stack features vertically on mobile */
+    gap: 40px;
+  }
+
+  .feature-item {
+    flex: 1 1 100%; /* Full width for items */
+    max-width: 300px; /* Optional: limit individual item width */
+    margin: 0 auto;
+  }
+
+  .feature-icon {
+    font-size: 5em; /* Smaller icons for mobile */
+  }
+
+  .pentagons-grid {
+    flex-direction: column; /* Stack pentagons vertically on mobile */
+    gap: 50px;
+  }
+  .pentagon-item {
+    flex-basis: auto; /* Revert flex basis */
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
