@@ -48,7 +48,7 @@ body {
 
 /* Hero Section Styling */
 .hero-section {
-  background-image: url("C:\Users\sipho\Desktop\Images\headphones_hero_1.jpg"); /* Desktop background */
+  background-image: url("C:\Users\sipho\Desktop\Images\headphones_hero_2.jpg"); /* Desktop background */
   background-size: cover;
   background-position: center;
   color: var(--text-color-light);
@@ -181,12 +181,24 @@ body {
   flex: 0 0 220px; /* Fixed width for items */
   text-align: center;
   padding: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animation for hover */
+}
+
+.feature-item:hover {
+  transform: translateY(-10px) scale(1.05); /* Lifts and slightly scales the item */
+  opacity: 0.9; /* Slight opacity change on hover */
 }
 
 .feature-icon {
   font-size: 6em; /* Large icons */
   color: var(--primary-color);
   margin-bottom: 20px;
+  font-family: "holberton_school-icon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 }
 
 .feature-item h3 {
@@ -201,11 +213,9 @@ body {
   color: #777;
 }
 
-/* Our results section (Placeholder) */
+/* Our results section */
 .our-results-section {
-  background-image: url("C:\Users\sipho\Desktop\Images\headphones_hero_1.jpg");
-  background-size: cover;
-  background-position: center;
+  background-color: var(--bg-dark); /* Set solid background color */
   color: var(--text-color-light);
   text-align: center;
   padding: 150px 0 100px; /* Adjust padding for visual balance */
@@ -213,17 +223,8 @@ body {
   z-index: 1;
 }
 
-/* Overlay for results section background image */
-.our-results-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for this section */
-  z-index: -1;
-}
+/* Removed overlay for results section background as there's no image */
+/* Removed background-image from this section */
 
 .our-results-section .section-title,
 .our-results-section .section-description {
@@ -234,12 +235,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 80px 40px; /* Space between pentagons */
+  gap: 80px 40px; /* Space between pentagons (larger gap for desktop) */
   margin-top: 80px;
 }
 
 .pentagon-item {
   text-align: center;
+  flex: 0 0 180px; /* Adjust width as per design image, roughly */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animation for hover */
+}
+
+.pentagon-item:hover {
+  transform: scale(1.1) rotate(5deg); /* Scales up and slightly rotates */
+  opacity: 0.8; /* Slight opacity change on hover */
 }
 
 .pentagon-shape {
@@ -256,7 +264,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 20px; /* Center pentagon and add space below */
 }
 
 .pentagon-shape .percentage {
@@ -272,7 +280,7 @@ body {
   color: var(--text-color-light);
 }
 
-/* Contact us section (Placeholder) */
+/* Contact us section */
 .contact-us-section {
   background-color: var(--bg-light);
   color: var(--text-color-dark);
@@ -298,6 +306,7 @@ body {
   font-size: 1em;
   color: var(--text-color-dark);
   outline: none; /* Remove outline on focus */
+  transition: border-bottom-color 0.3s ease; /* Smooth transition for border color */
 }
 
 .form-input::placeholder {
@@ -421,11 +430,13 @@ body {
 
   .pentagons-grid {
     gap: 40px 20px; /* Adjust gap for tablet */
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
 
   .pentagon-item {
-    flex-basis: 45%; /* Allow two items per row */
+    flex-basis: calc(
+      50% - 40px
+    ); /* Two columns on tablet with gap consideration */
+    max-width: 200px; /* Limit size for tablet */
   }
 
   .contact-form {
@@ -477,97 +488,4 @@ body {
   .contact-form {
     max-width: 100%;
   }
-}
-@font-face {
-  font-family: "holberton_school-icon";
-  src: url("fonts/holberton_school-icon.eot?sq4eq4");
-  src: url("fonts/holberton_school-icon.eot?sq4eq4#iefix")
-      format("embedded-opentype"),
-    url("fonts/holberton_school-icon.ttf?sq4eq4") format("truetype"),
-    url("fonts/holberton_school-icon.woff?sq4eq4") format("woff"),
-    url("fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="holberton_school-icon-"],
-[class*=" holberton_school-icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "holberton_school-icon" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.holberton_school-icon-arrow_1:before {
-  content: "\e900";
-}
-.holberton_school-icon-arrow_2:before {
-  content: "\e901";
-}
-.holberton_school-icon-arrow_3:before {
-  content: "\e902";
-}
-.holberton_school-icon-arrow_4:before {
-  content: "\e903";
-}
-.holberton_school-icon-arrow_5:before {
-  content: "\e904";
-}
-.holberton_school-icon-check:before {
-  content: "\e905";
-}
-.holberton_school-icon-ic_bag:before {
-  content: "\e906";
-}
-.holberton_school-icon-ic_cart:before {
-  content: "\e907";
-}
-.holberton_school-icon-ic_facebook:before {
-  content: "\e908";
-}
-.holberton_school-icon-ic_hearing:before {
-  content: "\e909";
-}
-.holberton_school-icon-ic_instagram:before {
-  content: "\e90a";
-}
-.holberton_school-icon-ic_laptop:before {
-  content: "\e90b";
-}
-.holberton_school-icon-ic_money:before {
-  content: "\e90c";
-}
-.holberton_school-icon-ic_music:before {
-  content: "\e90d";
-}
-.holberton_school-icon-ic_sound:before {
-  content: "\e90e";
-}
-.holberton_school-icon-ic_twitter:before {
-  content: "\e90f";
-}
-.holberton_school-icon-ic_video:before {
-  content: "\e910";
-}
-.holberton_school-icon-menu:before {
-  content: "\e911";
-}
-.holberton_school-icon-search_1:before {
-  content: "\e912";
-}
-.holberton_school-icon-search_2:before {
-  content: "\e913";
-}
-.holberton_school-icon-star:before {
-  content: "\e914";
 }
